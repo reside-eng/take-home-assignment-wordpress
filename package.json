@@ -1,0 +1,14 @@
+{
+  "name": "side",
+  "version": "1.0.0",
+  "author": "Side",
+  "license": "GPL-2.0-or-later",
+  "scripts": {
+    "build": "cd wp-content/themes/side && yarn install && yarn webpack --mode=production && cd ../../ && cd plugins/side && yarn install && yarn webpack --mode=production",
+    "test": "cypress open"
+  },
+  "devDependencies": {
+    "@testing-library/cypress": "8.0.0",
+    "cypress": "8.3.0"
+  }
+}

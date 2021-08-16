@@ -1,0 +1,75 @@
+wp-content/**/side/build
+
+# Don't track other themes
+wp-content/themes/*
+!wp-content/themes/side
+
+# Don't track other plugins
+wp-content/plugins/*
+!wp-content/plugins/side
+
+# IntelliJ files
+.idea/
+
+# Uploaded files
+wp-content/uploads/
+
+# This is used for the docker container for the WP CLI
+wp-app/
+
+*~
+.DS_Store
+.svn
+.cvs
+*.bak
+*.swp
+Thumbs.db
+
+# large/disallowed file types
+# a CDN should be used for these
+*.hqx
+*.bin
+*.exe
+*.dll
+*.deb
+*.dmg
+*.iso
+*.img
+*.msi
+*.msp
+*.msm
+*.mid
+*.midi
+*.kar
+*.mp3
+*.ogg
+*.m4a
+*.ra
+*.3gpp
+*.3gp
+*.mp4
+*.mpeg
+*.mpg
+*.mov
+*.webm
+*.flv
+*.m4v
+*.mng
+*.asx
+*.asf
+*.wmv
+*.avi
+
+# External Packages
+node_modules/
+vendor/
+!wp-content/plugins/**/vendor
+
+# Yarn files
+yarn-error.log
+
+# PHP CS Fixer cache
+.php_cs.cache
+
+# Docker Override
+docker-compose.override.yml

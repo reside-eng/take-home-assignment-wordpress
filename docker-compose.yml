@@ -1,0 +1,63 @@
+version: '3.3'
+
+services:
+  nginx-proxy:
+    image: jwilder/nginx-proxy
+    restart: always
+    ports:
+      - 80:80
+      - 443:443
+      - 3306:3306
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+    networks:
+      - default
+    
+  db:
+    image: mysql:5.7
+    ports:
+      - "8089:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: somewordpress
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: wordpress
+    networks:
+      - backend
+
+  wordpress:
+    depends_on:
+      - db
+    image: wordpress:5.6.2
+    ports:
+      - "8080:80"
+    restart: always
+    volumes:
+      - ./wp-app:/var/www/html:delegated
+      - ./wp-content/themes/:/var/www/html/wp-content/themes:delegated
+      - ./wp-content/plugins/:/var/www/html/wp-content/plugins:delegated
+      - ./wp-content/uploads/:/var/www/html/wp-content/uploads:cached
+    environment:
+      VIRTUAL_PORT: 8080
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
+      WORDPRESS_DB_NAME: wordpress
+    networks:
+      - frontend
+      - backend
+
+networks:
+  default:
+    external:
+      name: proxy
+  backend:
+  frontend:
+    external:
+      name: proxy
+
+volumes:
+    db_data:

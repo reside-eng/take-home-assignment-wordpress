@@ -4,7 +4,7 @@
   "author": "Side",
   "license": "GPL-2.0-or-later",
   "scripts": {
-    "build": "cd wp-content/themes/side && yarn install && yarn webpack --mode=production && cd ../../ && cd plugins/side && yarn install && yarn webpack --mode=production",
+    "build": "yarn && cd wp-content/themes/side && yarn install && yarn webpack --mode=production && cd ../../ && cd plugins/side && yarn install && yarn webpack --mode=production",
     "test": "cypress open"
   },
   "devDependencies": {

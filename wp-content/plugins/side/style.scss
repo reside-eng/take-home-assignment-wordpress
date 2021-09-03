@@ -1,0 +1,64 @@
+.header {
+    position: fixed;
+    top: 0;
+    background: #E5E5E5;
+}
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.single-property {
+    width: 200px;
+    border: 1px solid black;
+    margin: 5px;
+}
+.pic {
+    position: relative;
+    width: 315px;
+    height: 280px;
+}
+.icon {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
+.detail-row {
+    display: flex;
+    align-items: flex-start;
+}
+.beds, .bath, .footage {
+    display: inline-flex;
+    font-family: open-sans;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 32px;
+}
+.beds, .bath {
+    padding-right: 5px;
+    border-right: 1px solid black;
+
+}
+.bath, .footage {
+    padding-left: 5px;
+}
+
+.price
+{
+    color: #2D2D2D;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 24px;
+}
+
+.address {
+    font-size: 15px;
+    line-height: 32px;
+    color: #2D2D2D;
+}
+
+.date {
+    color: #979797;
+}

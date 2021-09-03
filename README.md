@@ -5,3 +5,23 @@
 # Code and Design Decisions
 
 Please document your code & design decisions here.
+
+Called the SimplyRETS api first
+Saved that data into a transient. For dev purposes only, saving the transient for just a few seconds.
+I would imagine real property listings should get refreshed every hour.
+
+Then I saved only the data I needed for the property listings rendering into a properties array.
+
+For rendering, created a templates folder since it was mentioned other pages would be created in this plugin.
+Not running FE for quite a while had trouble and googled how to load a template from w/in a plugin instead of the theme.
+
+Having issues loading the script and scss files even though it's already enqueued.
+
+I used the same html template in a replit to mock the styling so far since I couldn't load the scss file.
+
+Added pseudo code for toggling image and saving to localstorage when user clicks on the favorite heart.
+Need to add code to remove from localStorage when user un-faves a listing.
+
+
+
+
